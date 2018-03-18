@@ -1,0 +1,7 @@
+.gradle/
+ColoredChests.txt
+CompiledWith.txt
+build/
+changelog.html
+logs/
+output/
