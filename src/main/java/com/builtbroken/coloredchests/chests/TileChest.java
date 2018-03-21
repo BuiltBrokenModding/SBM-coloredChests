@@ -1,8 +1,13 @@
 package com.builtbroken.coloredchests.chests;
 
+import java.awt.Color;
+import java.util.Iterator;
+import java.util.List;
+
 import com.builtbroken.coloredchests.ColoredChests;
 import com.builtbroken.coloredchests.network.PacketChest;
 import com.builtbroken.coloredchests.network.PacketManager;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
@@ -11,10 +16,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
-
-import java.awt.*;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Dark on 7/26/2015.
@@ -353,6 +354,12 @@ public class TileChest extends TileInv
             this.getWorldObj().notifyBlocksOfNeighborChange(this.xCoord, this.yCoord, this.zCoord, this.getBlockType());
             this.getWorldObj().notifyBlocksOfNeighborChange(this.xCoord, this.yCoord - 1, this.zCoord, this.getBlockType());
         }
+    }
+    
+    @Override
+    public AxisAlignedBB getRenderBoundingBox()
+    {
+    	return AxisAlignedBB.getBoundingBox(xCoord - 1, yCoord, zCoord - 1, xCoord + 2, yCoord + 2, zCoord + 2);
     }
 
     @Override
