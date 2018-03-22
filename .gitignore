@@ -1,7 +1,17 @@
 .gradle/
+.settings
+.classpath
+.project
+.cache-main
+.cache-tests
 ColoredChests.txt
 CompiledWith.txt
+options.txt
+crash-reports/
+config/
 build/
 changelog.html
 logs/
 output/
+/bin/
+/saves
